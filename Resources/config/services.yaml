@@ -1,0 +1,7 @@
+services:
+    tandrewcl\ApiRequestConvertBundle\EventListener\RequestTransformerListener:
+        tags: [ { name: kernel.event_listener, method: onKernelRequest, priority: 100 } ]
+    tandrewcl\ApiRequestConvertBundle\ArgumentResolver\InputDTOResolver:
+        autowire: true
+        autoconfigure: true
+        tags: [ { name: controller.argument_value_resolver, priority: 50 } ]
